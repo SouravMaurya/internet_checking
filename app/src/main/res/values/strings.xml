@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Internet Checking</string>
+    <string name="alert">Alert!</string>
+    <string name="internet_connection_lost">Internet Connection Lost.....</string>
+    <string name="setting">Setting</string>
+    <string name="internet_connected">Internet is Connected</string>
+    <string name="internet_not_connected">Internet is Not-Connected</string>
+    <string name="you_are_online_now">You are online now</string>
+    <string name="you_are_offline_now">You are offline now</string>
+</resources>
