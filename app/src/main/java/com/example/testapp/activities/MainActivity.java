@@ -22,25 +22,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main,null);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main, null);
 
         internetCheckReceiver = new InternetCheckReceiver() {
             @Override
             protected void onNetworkConnected() {
-                Snackbar.make(binding.getRoot(), getString(R.string.you_are_online_now),Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(binding.getRoot(), getString(R.string.you_are_online_now), Snackbar.LENGTH_SHORT).show();
                 binding.mainText.setText(R.string.internet_connected);
             }
 
             @Override
             protected void onNetworkDisConnected() {
-                Snackbar.make(binding.getRoot(), getString(R.string.you_are_offline_now),Snackbar.LENGTH_LONG)
-                        .setAction(getString(R.string.setting),v -> {
+                Snackbar.make(binding.getRoot(), getString(R.string.you_are_offline_now), Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.setting), v -> {
                             startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
                         }).show();
                 binding.mainText.setText(R.string.internet_not_connected);
             }
         };
-        registerReceiver(internetCheckReceiver,  new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        registerReceiver(internetCheckReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
     }
 
