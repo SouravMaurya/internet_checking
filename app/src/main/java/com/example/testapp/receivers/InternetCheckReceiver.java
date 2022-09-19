@@ -13,16 +13,17 @@ public abstract class InternetCheckReceiver extends BroadcastReceiver {
 
         int status = NetworkUtil.getConnectivityStatusString(context);
 
-        if(status == 0) {
+        if (status == 0) {
             onNetworkDisConnected();
 //            InternetDialog.showDialog(context);
-        }else{
+        } else {
             onNetworkConnected();
 //            InternetDialog.cancelDialog(context);
         }
     }
 
     protected abstract void onNetworkConnected();
+
     protected abstract void onNetworkDisConnected();
 
 }
